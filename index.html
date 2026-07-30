@@ -20,7 +20,7 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #F3F4F6; }
         
         /* Print Styles */
@@ -50,189 +50,241 @@
     <div id="app" class="flex h-screen overflow-hidden">
         
         <!-- Sidebar (No Print) -->
-        <aside class="w-64 bg-darkblue text-white flex flex-col no-print">
-            <div class="p-6 border-b border-gray-700 text-center">
-                <h1 class="text-2xl font-bold text-gold">ZENQOR</h1>
-                <p class="text-xs text-gray-400 tracking-widest">TECHNOLOGIES</p>
+        <aside class="w-64 bg-darkblue text-white flex flex-col no-print shadow-xl">
+            <div class="p-6 border-b border-gray-700 text-center flex flex-col items-center">
+                <img src="data:image/png;base64,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" alt="ZENQOR Logo" class="h-20 mb-2 object-contain">
+                <h1 class="text-xl font-bold text-gold tracking-wide">ZENQOR</h1>
+                <p class="text-[10px] text-gray-400 tracking-widest uppercase">Technologies</p>
             </div>
             <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
-                <button @click="currentTab = 'dashboard'" :class="{'bg-gray-800 text-gold': currentTab === 'dashboard'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
+                <button @click="currentTab = 'dashboard'" :class="{'bg-gray-800 text-gold shadow': currentTab === 'dashboard'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
                     <i class="fa-solid fa-chart-line w-6"></i> Dashboard
                 </button>
-                <button @click="currentTab = 'create'" :class="{'bg-gray-800 text-gold': currentTab === 'create'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
+                <button @click="createNewDoc" :class="{'bg-gray-800 text-gold shadow': currentTab === 'create'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
                     <i class="fa-solid fa-file-invoice w-6"></i> Create Document
                 </button>
-                <button @click="currentTab = 'customers'" :class="{'bg-gray-800 text-gold': currentTab === 'customers'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
+                <button @click="currentTab = 'customers'" :class="{'bg-gray-800 text-gold shadow': currentTab === 'customers'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
                     <i class="fa-solid fa-users w-6"></i> Customers
                 </button>
-                <button @click="currentTab = 'products'" :class="{'bg-gray-800 text-gold': currentTab === 'products'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
+                <button @click="currentTab = 'products'" :class="{'bg-gray-800 text-gold shadow': currentTab === 'products'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
                     <i class="fa-solid fa-box w-6"></i> Products
                 </button>
-                <button @click="currentTab = 'settings'" :class="{'bg-gray-800 text-gold': currentTab === 'settings'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
+                <button @click="currentTab = 'settings'" :class="{'bg-gray-800 text-gold shadow': currentTab === 'settings'}" class="w-full text-left p-3 rounded-lg font-medium hover:bg-gray-800 transition flex items-center">
                     <i class="fa-solid fa-cog w-6"></i> Settings
                 </button>
             </nav>
+            <div class="p-4 border-t border-gray-800 text-xs text-gray-400 text-center">
+                v3.0 Corporate Edition
+            </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto no-print">
+        <main class="flex-1 overflow-y-auto no-print bg-gray-100">
             
             <!-- Dashboard Tab -->
-            <div v-show="currentTab === 'dashboard'" class="p-8">
-                <h2 class="text-3xl font-bold text-darkblue mb-6">Executive Dashboard</h2>
+            <div v-show="currentTab === 'dashboard'" class="p-8 max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h2 class="text-3xl font-bold text-darkblue">Executive Dashboard</h2>
+                        <p class="text-gray-500 text-sm">Pantau prestasi jualan dan urus dokumen syarikat.</p>
+                    </div>
+                    <button @click="createNewDoc" class="bg-gold text-darkblue font-bold px-5 py-2.5 rounded-lg shadow hover:bg-yellow-500 transition flex items-center">
+                        <i class="fa-solid fa-plus mr-2"></i> Buat Dokumen Baru
+                    </button>
+                </div>
+
+                <!-- KPI Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-gold">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-gold">
                         <p class="text-gray-500 text-sm font-semibold">Total Documents</p>
                         <h3 class="text-3xl font-bold text-darkblue mt-2">{{ history.length }}</h3>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-darkblue">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-darkblue">
                         <p class="text-gray-500 text-sm font-semibold">Total Invoice Amount</p>
                         <h3 class="text-3xl font-bold text-darkblue mt-2">RM {{ totalSales.toFixed(2) }}</h3>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-green-500">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
                         <p class="text-gray-500 text-sm font-semibold">Customers</p>
                         <h3 class="text-3xl font-bold text-darkblue mt-2">{{ customers.length }}</h3>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-purple-500">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-purple-500">
                         <p class="text-gray-500 text-sm font-semibold">Products</p>
                         <h3 class="text-3xl font-bold text-darkblue mt-2">{{ products.length }}</h3>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h3 class="text-xl font-bold text-darkblue mb-4">Recent Documents</h3>
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="bg-gray-100 text-darkblue">
-                                <th class="p-3 border">Date</th>
-                                <th class="p-3 border">Type</th>
-                                <th class="p-3 border">Doc No</th>
-                                <th class="p-3 border">Customer</th>
-                                <th class="p-3 border text-right">Amount (RM)</th>
-                                <th class="p-3 border text-center w-20">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-if="history.length === 0"><td colspan="6" class="p-4 text-center text-gray-500">No documents created yet.</td></tr>
-                            <tr v-for="doc in history.slice().reverse()" :key="doc.id" class="border-b hover:bg-gray-50">
-                                <td class="p-3 border">{{ doc.date }}</td>
-                                <td class="p-3 border">
-                                    <span :class="doc.type === 'Invoice' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'" class="px-2 py-1 rounded text-xs font-bold">{{ doc.type }}</span>
-                                </td>
-                                <td class="p-3 border">{{ doc.docNo }}</td>
-                                <td class="p-3 border">{{ doc.customerName }}</td>
-                                <td class="p-3 border text-right font-bold">{{ doc.grandTotal.toFixed(2) }}</td>
-                                <td class="p-3 border text-center">
-                                    <button @click="deleteDoc(doc.id)" class="text-red-500 hover:text-red-700 bg-red-100 px-3 py-1 rounded" title="Hapus">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- Recent Documents Table with View & Edit -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-darkblue">Recent Documents</h3>
+                        <span class="text-xs text-gray-400">Klik "View / Edit" untuk melihat dan mengemaskini dokumen</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50 text-darkblue border-b border-gray-200">
+                                    <th class="p-3 text-sm font-semibold">Date</th>
+                                    <th class="p-3 text-sm font-semibold">Type</th>
+                                    <th class="p-3 text-sm font-semibold">Doc No</th>
+                                    <th class="p-3 text-sm font-semibold">Customer</th>
+                                    <th class="p-3 text-sm font-semibold text-right">Amount (RM)</th>
+                                    <th class="p-3 text-sm font-semibold text-center w-36">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-if="history.length === 0"><td colspan="6" class="p-8 text-center text-gray-500">Tiada dokumen. Klik "Buat Dokumen Baru" untuk bermula.</td></tr>
+                                <tr v-for="doc in history.slice().reverse()" :key="doc.id" class="border-b border-gray-100 hover:bg-blue-50/40 transition">
+                                    <td class="p-3 text-sm text-gray-700">{{ doc.date }}</td>
+                                    <td class="p-3">
+                                        <span :class="doc.type === 'Invoice' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'" class="px-2.5 py-1 rounded-full text-xs font-bold">{{ doc.type }}</span>
+                                    </td>
+                                    <td class="p-3 text-sm font-bold text-darkblue">{{ doc.docNo }}</td>
+                                    <td class="p-3 text-sm text-gray-700">{{ doc.customerName }}</td>
+                                    <td class="p-3 text-sm text-right font-bold text-darkblue">{{ doc.grandTotal.toFixed(2) }}</td>
+                                    <td class="p-3 text-center space-x-2">
+                                        <button @click="editDoc(doc)" class="bg-blue-100 text-blue-700 hover:bg-blue-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition inline-flex items-center" title="Lihat & Edit">
+                                            <i class="fa-solid fa-pen-to-square mr-1"></i> View / Edit
+                                        </button>
+                                        <button @click="deleteDoc(doc.id)" class="bg-red-100 text-red-600 hover:bg-red-200 px-2.5 py-1.5 rounded-lg text-xs transition" title="Hapus">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
-            <!-- Create Document Tab (Interactive UI) -->
-            <div v-show="currentTab === 'create'" class="p-8">
+            <!-- Create / Edit Document Tab -->
+            <div v-show="currentTab === 'create'" class="p-8 max-w-7xl mx-auto">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-3xl font-bold text-darkblue">Create Document</h2>
-                    <button @click="printDocument" class="bg-darkblue text-white px-6 py-2 rounded shadow hover:bg-blue-900 transition flex items-center">
-                        <i class="fa-solid fa-print mr-2"></i> Print / Save PDF
-                    </button>
+                    <div>
+                        <h2 class="text-3xl font-bold text-darkblue">{{ isEditing ? 'Edit Document: ' + form.docNo : 'Create Document' }}</h2>
+                        <p v-if="isEditing" class="text-sm text-gold font-semibold">Anda sedang menyunting dokumen sedia ada</p>
+                    </div>
+                    <div class="space-x-3">
+                        <button v-if="isEditing" @click="cancelEdit" class="bg-gray-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-600 transition text-sm">
+                            Batal Edit
+                        </button>
+                        <button @click="printDocument" class="bg-darkblue text-white px-6 py-2.5 rounded-lg shadow hover:bg-blue-900 transition flex items-center font-semibold">
+                            <i class="fa-solid fa-print mr-2"></i> {{ isEditing ? 'Kemaskini & Print PDF' : 'Simpan & Print PDF' }}
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="grid grid-cols-2 gap-6 mb-6">
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <!-- Form Header Meta -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Document Type</label>
-                            <select v-model="form.type" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-gold">
+                            <select v-model="form.type" :disabled="isEditing" class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold bg-gray-50">
                                 <option value="Invoice">Invoice</option>
                                 <option value="Quotation">Quotation</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Document Number</label>
-                            <input type="text" v-model="form.docNo" class="w-full p-2 border rounded bg-gray-100 font-bold" readonly>
+                            <input type="text" v-model="form.docNo" class="w-full p-2.5 border rounded-lg bg-gray-100 font-bold text-darkblue" readonly>
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Customer</label>
-                            <select v-model="form.customer" @change="selectCustomer" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-gold">
-                                <option :value="null">-- Select Customer --</option>
+                            <select v-model="form.customer" @change="selectCustomer" class="w-full p-2.5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold bg-gray-50">
+                                <option :value="null">-- Pilih Pelanggan --</option>
                                 <option v-for="c in customers" :value="c">{{ c.name }}</option>
                             </select>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-2">Date</label>
-                                <input type="date" v-model="form.date" class="w-full p-2 border rounded">
+                                <input type="date" v-model="form.date" class="w-full p-2.5 border rounded-lg bg-gray-50">
                             </div>
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-2">{{ form.type === 'Invoice' ? 'Due Date' : 'Valid Until' }}</label>
-                                <input type="date" v-model="form.dueDate" class="w-full p-2 border rounded">
+                                <input type="date" v-model="form.dueDate" class="w-full p-2.5 border rounded-lg bg-gray-50">
                             </div>
                         </div>
                     </div>
 
-                    <h3 class="text-lg font-bold text-darkblue mb-4 mt-8 border-b pb-2">Items</h3>
-                    <table class="w-full mb-4 border">
-                        <thead class="bg-darkblue text-white">
+                    <!-- Customer Info Summary -->
+                    <div v-if="form.customer" class="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-sm">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-gray-500 block">Nama / Syarikat:</span>
+                                <strong class="text-darkblue">{{ form.customer.name }}</strong>
+                                <p class="text-gray-600">{{ form.customer.address }}</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Contact Person: <strong>{{ form.customer.contact }}</strong></span>
+                                <span class="text-gray-500 block">No Pendaftaran / SSM: <strong>{{ form.customer.ssm || 'N/A' }}</strong></span>
+                                <span class="text-gray-500 block">Phone: <strong>{{ form.customer.phone }}</strong> | Email: <strong>{{ form.customer.email }}</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Items Table -->
+                    <h3 class="text-lg font-bold text-darkblue mb-4 mt-8 border-b pb-2">Senarai Item / Perkhidmatan</h3>
+                    <table class="w-full mb-4 border-collapse">
+                        <thead class="bg-darkblue text-white text-sm">
                             <tr>
-                                <th class="p-2 border">Product</th>
-                                <th class="p-2 border">Description</th>
-                                <th class="p-2 border w-24">Qty</th>
-                                <th class="p-2 border w-32">Unit Price</th>
-                                <th class="p-2 border w-20">Tax</th>
-                                <th class="p-2 border w-32 text-right">Amount</th>
-                                <th class="p-2 border w-12"></th>
+                                <th class="p-3 border border-darkblue text-left">Product / Code</th>
+                                <th class="p-3 border border-darkblue text-left">Description</th>
+                                <th class="p-3 border border-darkblue text-center w-24">Qty</th>
+                                <th class="p-3 border border-darkblue text-right w-36">Unit Price (RM)</th>
+                                <th class="p-3 border border-darkblue text-center w-20">Tax</th>
+                                <th class="p-3 border border-darkblue text-right w-36">Amount (RM)</th>
+                                <th class="p-3 border border-darkblue text-center w-12"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="(item, index) in form.items" :key="index">
+                            <tr v-for="(item, index) in form.items" :key="index" class="border-b hover:bg-gray-50">
                                 <td class="p-2 border">
-                                    <select v-model="item.product" @change="selectProduct(item)" class="w-full p-1 border rounded">
-                                        <option :value="null">-- Select --</option>
+                                    <select v-model="item.product" @change="selectProduct(item)" class="w-full p-2 border rounded-md text-sm">
+                                        <option :value="null">-- Pilih --</option>
                                         <option v-for="p in products" :value="p">{{ p.code }}</option>
                                     </select>
                                 </td>
                                 <td class="p-2 border">
-                                    <input type="text" v-model="item.desc" class="w-full p-1 border rounded" placeholder="Description">
+                                    <input type="text" v-model="item.desc" class="w-full p-2 border rounded-md text-sm" placeholder="Keterangan Produk/Servis">
                                 </td>
                                 <td class="p-2 border">
-                                    <input type="number" v-model="item.qty" class="w-full p-1 border rounded text-center" min="1">
+                                    <input type="number" v-model="item.qty" class="w-full p-2 border rounded-md text-center text-sm font-semibold" min="1">
                                 </td>
                                 <td class="p-2 border">
-                                    <input type="number" v-model="item.price" class="w-full p-1 border rounded text-right" step="0.01">
+                                    <input type="number" v-model="item.price" class="w-full p-2 border rounded-md text-right text-sm" step="0.01">
                                 </td>
-                                <td class="p-2 border text-center">
+                                <td class="p-2 border text-center text-sm">
                                     {{ item.taxable ? company.sstRate + '%' : '-' }}
                                 </td>
-                                <td class="p-2 border text-right font-bold bg-gray-50">
+                                <td class="p-2 border text-right font-bold bg-gray-50 text-sm">
                                     {{ calculateItemAmount(item).toFixed(2) }}
                                 </td>
                                 <td class="p-2 border text-center">
-                                    <button @click="removeItem(index)" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button>
+                                    <button @click="removeItem(index)" class="text-red-500 hover:text-red-700 p-1"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <button @click="addItem" class="bg-gray-200 text-darkblue px-4 py-2 rounded text-sm font-bold hover:bg-gray-300">+ Add Row</button>
+                    <button @click="addItem" class="bg-gray-100 text-darkblue px-4 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 border border-gray-300 transition">
+                        + Tambah Baris
+                    </button>
 
+                    <!-- Summary & Totals -->
                     <div class="flex justify-end mt-8">
-                        <div class="w-80 space-y-3">
-                            <div class="flex justify-between font-bold">
+                        <div class="w-80 space-y-3 bg-gray-50 p-6 rounded-xl border border-gray-200">
+                            <div class="flex justify-between font-semibold text-gray-700">
                                 <span>Subtotal:</span>
                                 <span>RM {{ subtotal.toFixed(2) }}</span>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold">Discount:</span>
-                                <input type="number" v-model="form.discount" class="w-24 p-1 border rounded text-right" step="0.01">
+                            <div class="flex justify-between items-center text-gray-700">
+                                <span class="font-semibold">Discount (-):</span>
+                                <input type="number" v-model="form.discount" class="w-24 p-1.5 border rounded text-right bg-white" step="0.01">
                             </div>
-                            <div class="flex justify-between font-bold">
+                            <div class="flex justify-between font-semibold text-gray-700">
                                 <span>SST ({{ company.sstRate }}% on taxable):</span>
                                 <span>RM {{ sstAmount.toFixed(2) }}</span>
                             </div>
-                            <div class="flex justify-between font-bold text-xl text-darkblue border-t border-darkblue pt-2">
+                            <div class="flex justify-between font-bold text-xl text-darkblue border-t border-gray-300 pt-3">
                                 <span>Grand Total:</span>
                                 <span>RM {{ grandTotal.toFixed(2) }}</span>
                             </div>
@@ -241,122 +293,170 @@
                 </div>
             </div>
 
-            <!-- Databases / Settings Tabs (Simplified) -->
-            <div v-show="['customers', 'products', 'settings'].includes(currentTab)" class="p-8">
-                <h2 class="text-3xl font-bold text-darkblue mb-6 capitalize">{{ currentTab }}</h2>
-                <div class="bg-white rounded-lg shadow p-6">
-                    <p class="text-gray-600 mb-4">You can manage data directly here. It saves to your browser automatically.</p>
+            <!-- Customers Management Tab -->
+            <div v-show="currentTab === 'customers'" class="p-8 max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-bold text-darkblue">Pengurusan Pelanggan</h2>
+                    <button @click="addCustomer" class="bg-darkblue text-white font-bold px-4 py-2 rounded-lg shadow hover:bg-blue-900 transition">
+                        + Tambah Pelanggan
+                    </button>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 text-darkblue border-b">
+                                <th class="p-3 text-sm font-semibold">Nama Syarikat / Individu</th>
+                                <th class="p-3 text-sm font-semibold">Contact Person</th>
+                                <th class="p-3 text-sm font-semibold">No. Pendaftaran / SSM</th>
+                                <th class="p-3 text-sm font-semibold">Telefon</th>
+                                <th class="p-3 text-sm font-semibold">Email</th>
+                                <th class="p-3 text-sm font-semibold">Alamat</th>
+                                <th class="p-3 text-sm font-semibold text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(c, idx) in customers" :key="idx" class="border-b hover:bg-gray-50">
+                                <td class="p-2"><input v-model="c.name" class="w-full p-1.5 border rounded text-sm font-semibold"></td>
+                                <td class="p-2"><input v-model="c.contact" class="w-full p-1.5 border rounded text-sm"></td>
+                                <td class="p-2"><input v-model="c.ssm" class="w-full p-1.5 border rounded text-sm" placeholder="e.g. 202601001234"></td>
+                                <td class="p-2"><input v-model="c.phone" class="w-full p-1.5 border rounded text-sm"></td>
+                                <td class="p-2"><input v-model="c.email" class="w-full p-1.5 border rounded text-sm"></td>
+                                <td class="p-2"><input v-model="c.address" class="w-full p-1.5 border rounded text-sm"></td>
+                                <td class="p-2 text-center">
+                                    <button @click="removeCustomer(idx)" class="text-red-500 hover:text-red-700 p-1"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-4 flex justify-end">
+                        <button @click="saveData" class="bg-green-600 text-white font-bold px-6 py-2 rounded-lg shadow hover:bg-green-700">Simpan Data Pelanggan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products & Settings Tabs -->
+            <div v-show="['products', 'settings'].includes(currentTab)" class="p-8 max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-darkblue mb-6 capitalize">{{ currentTab }} Management</h2>
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <p class="text-gray-600 mb-4 text-sm">Kemaskini data sistem terus di bawah (disimpan secara automatik dalam LocalStorage):</p>
                     
-                    <textarea v-if="currentTab === 'customers'" v-model="customersJson" class="w-full h-96 p-4 border rounded font-mono text-sm" placeholder="Edit Customers JSON"></textarea>
-                    <textarea v-if="currentTab === 'products'" v-model="productsJson" class="w-full h-96 p-4 border rounded font-mono text-sm" placeholder="Edit Products JSON"></textarea>
-                    <textarea v-if="currentTab === 'settings'" v-model="companyJson" class="w-full h-96 p-4 border rounded font-mono text-sm" placeholder="Edit Company Settings JSON"></textarea>
+                    <textarea v-if="currentTab === 'products'" v-model="productsJson" class="w-full h-96 p-4 border rounded-lg font-mono text-sm bg-gray-50" placeholder="Edit Products JSON"></textarea>
+                    <textarea v-if="currentTab === 'settings'" v-model="companyJson" class="w-full h-96 p-4 border rounded-lg font-mono text-sm bg-gray-50" placeholder="Edit Company Settings JSON"></textarea>
                     
                     <div class="mt-4 flex justify-end">
-                        <button @click="saveData" class="bg-green-600 text-white px-6 py-2 rounded shadow hover:bg-green-700">Save Data</button>
+                        <button @click="saveData" class="bg-green-600 text-white font-bold px-6 py-2 rounded-lg shadow hover:bg-green-700">Simpan Tetapan</button>
                     </div>
                 </div>
             </div>
 
         </main>
 
-        <!-- PRINT AREA (Only visible during window.print()) -->
+        <!-- ============================================================= -->
+        <!-- PRINT AREA (Only visible during window.print()) - A4 Corporate -->
+        <!-- ============================================================= -->
         <div id="print-area" class="print-only p-8 text-sm">
-            <!-- Header -->
+            
+            <!-- Header with Official Logo -->
             <div class="flex justify-between items-start print-header pb-4 mb-6">
-                <div>
-                    <h1 class="text-3xl font-bold text-darkblue mb-1">{{ company.name }}</h1>
-                    <p class="font-semibold text-gray-700">{{ company.ssm }}</p>
-                    <p class="text-gray-600 mt-2 whitespace-pre-line">{{ company.address }}</p>
-                    <p class="text-gray-600">{{ company.city }}</p>
-                    <p class="text-gray-600 mt-2">Tel: {{ company.phone }} | Email: {{ company.email }}</p>
+                <div class="flex items-start space-x-4">
+                    <img src="data:image/png;base64,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" alt="ZENQOR Logo" class="h-24 w-auto object-contain">
+                    <div>
+                        <h1 class="text-3xl font-bold text-darkblue tracking-tight">{{ company.name }}</h1>
+                        <p class="font-bold text-gray-700 text-sm mt-0.5">No. Pendaftaran SSM: {{ company.ssm }}</p>
+                        <p class="text-gray-600 mt-2 whitespace-pre-line text-xs leading-relaxed">{{ company.address }}</p>
+                        <p class="text-gray-600 text-xs">{{ company.city }}</p>
+                        <p class="text-gray-600 text-xs mt-1">Tel: {{ company.phone }} | Email: {{ company.email }}</p>
+                    </div>
                 </div>
+                
                 <div class="text-right">
-                    <h2 class="text-4xl font-bold text-gold uppercase mb-2">{{ form.type }}</h2>
-                    <table class="w-full text-right mt-4">
-                        <tr><td class="font-bold pr-4">No:</td><td class="bg-gray-100 px-2 py-1 font-bold">{{ form.docNo }}</td></tr>
-                        <tr><td class="font-bold pr-4">Date:</td><td class="bg-gray-100 px-2 py-1">{{ form.date }}</td></tr>
-                        <tr><td class="font-bold pr-4">{{ form.type === 'Invoice' ? 'Due Date:' : 'Valid Until:' }}</td><td class="bg-gray-100 px-2 py-1">{{ form.dueDate }}</td></tr>
+                    <h2 class="text-4xl font-bold text-gold uppercase tracking-wider mb-2">{{ form.type }}</h2>
+                    <table class="w-full text-right mt-3 text-sm">
+                        <tr><td class="font-bold pr-4 text-gray-600">No:</td><td class="bg-gray-100 px-3 py-1 font-bold text-darkblue">{{ form.docNo }}</td></tr>
+                        <tr><td class="font-bold pr-4 text-gray-600">Date:</td><td class="bg-gray-100 px-3 py-1">{{ form.date }}</td></tr>
+                        <tr><td class="font-bold pr-4 text-gray-600">{{ form.type === 'Invoice' ? 'Due Date:' : 'Valid Until:' }}</td><td class="bg-gray-100 px-3 py-1">{{ form.dueDate }}</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- Bill To -->
-            <div class="mb-8">
-                <h3 class="text-lg font-bold text-gold border-b-2 border-darkblue inline-block mb-2">BILL TO:</h3>
-                <div v-if="form.customer" class="mt-2">
-                    <p class="font-bold text-lg text-darkblue">{{ form.customer.name }}</p>
-                    <p class="font-semibold text-gray-700">Attn: {{ form.customer.contact }}</p>
-                    <p class="text-gray-600">{{ form.customer.address }}</p>
-                    <p class="text-gray-600">Tel: {{ form.customer.phone }} | Email: {{ form.customer.email }}</p>
+            <!-- Bill To Section -->
+            <div class="mb-6">
+                <h3 class="text-sm font-bold text-gold border-b-2 border-darkblue inline-block mb-2 tracking-wide uppercase">BILL TO:</h3>
+                <div v-if="form.customer" class="mt-1">
+                    <p class="font-bold text-base text-darkblue">{{ form.customer.name }}</p>
+                    <p class="font-semibold text-gray-700 text-xs">Attn: {{ form.customer.contact }}</p>
+                    <p v-if="form.customer.ssm" class="font-semibold text-gray-700 text-xs">No. Pendaftaran: {{ form.customer.ssm }}</p>
+                    <p class="text-gray-600 text-xs">{{ form.customer.address }}</p>
+                    <p class="text-gray-600 text-xs mt-1">Tel: {{ form.customer.phone }} | Email: {{ form.customer.email }}</p>
                 </div>
             </div>
 
             <!-- Items Table -->
-            <table class="w-full mb-8 border-collapse print-table">
+            <table class="w-full mb-6 border-collapse print-table text-xs">
                 <thead>
                     <tr>
-                        <th class="p-2 border text-center w-12">Bil</th>
-                        <th class="p-2 border text-left">Product / Description</th>
-                        <th class="p-2 border text-center w-16">Qty</th>
-                        <th class="p-2 border text-right w-28">Unit Price</th>
-                        <th class="p-2 border text-center w-16">Tax</th>
-                        <th class="p-2 border text-right w-32">Amount</th>
+                        <th class="p-2 border border-darkblue text-center w-10">Bil</th>
+                        <th class="p-2 border border-darkblue text-left">Product / Description</th>
+                        <th class="p-2 border border-darkblue text-center w-14">Qty</th>
+                        <th class="p-2 border border-darkblue text-right w-24">Unit Price</th>
+                        <th class="p-2 border border-darkblue text-center w-14">Tax</th>
+                        <th class="p-2 border border-darkblue text-right w-28">Amount (RM)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in form.items" :key="index" v-show="item.product || item.desc">
-                        <td class="p-2 border text-center">{{ index + 1 }}</td>
-                        <td class="p-2 border">
-                            <span class="font-bold block">{{ item.product ? item.product.code : '' }}</span>
+                        <td class="p-2 border border-gray-300 text-center">{{ index + 1 }}</td>
+                        <td class="p-2 border border-gray-300">
+                            <span class="font-bold text-darkblue block">{{ item.product ? item.product.code : '' }}</span>
                             <span class="text-gray-700 whitespace-pre-line">{{ item.desc }}</span>
                         </td>
-                        <td class="p-2 border text-center">{{ item.qty || 1 }}</td>
-                        <td class="p-2 border text-right">{{ item.price.toFixed(2) }}</td>
-                        <td class="p-2 border text-center">{{ item.taxable ? company.sstRate + '%' : '-' }}</td>
-                        <td class="p-2 border text-right font-bold">{{ calculateItemAmount(item).toFixed(2) }}</td>
+                        <td class="p-2 border border-gray-300 text-center">{{ item.qty || 1 }}</td>
+                        <td class="p-2 border border-gray-300 text-right">{{ item.price.toFixed(2) }}</td>
+                        <td class="p-2 border border-gray-300 text-center">{{ item.taxable ? company.sstRate + '%' : '-' }}</td>
+                        <td class="p-2 border border-gray-300 text-right font-bold text-darkblue">{{ calculateItemAmount(item).toFixed(2) }}</td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- Totals & Payment -->
-            <div class="flex justify-between items-start">
-                <div class="w-1/2 pr-8">
+            <!-- Totals & Payment Details -->
+            <div class="flex justify-between items-start text-xs">
+                <div class="w-3/5 pr-8">
                     <h3 class="font-bold text-darkblue mb-1">Remarks / Terms:</h3>
-                    <p class="text-gray-600 mb-6">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
                         {{ form.type === 'Invoice' ? '1. Goods sold are not returnable.' : '1. Quotation valid for ' + validityDays + ' days.' }}<br>
                         2. Please state document number on payment.
                     </p>
                     
-                    <div v-if="form.type === 'Invoice'">
+                    <div v-if="form.type === 'Invoice'" class="bg-gray-50 p-3 rounded border border-gray-200">
                         <h3 class="font-bold text-gold mb-1">PAYMENT INFORMATION:</h3>
-                        <table class="text-sm">
-                            <tr><td class="font-bold pr-4">Bank:</td><td>{{ company.bankName }}</td></tr>
+                        <table class="text-xs">
+                            <tr><td class="font-bold pr-4">Bank Name:</td><td>{{ company.bankName }}</td></tr>
                             <tr><td class="font-bold pr-4">Account Name:</td><td>{{ company.accountName }}</td></tr>
-                            <tr><td class="font-bold pr-4">Account No:</td><td>{{ company.accountNo }}</td></tr>
+                            <tr><td class="font-bold pr-4">Account No:</td><td class="font-bold">{{ company.accountNo }}</td></tr>
                             <tr><td class="font-bold pr-4">DuitNow QR:</td><td>{{ company.duitNow }}</td></tr>
                         </table>
                     </div>
                 </div>
                 
-                <div class="w-1/2 max-w-sm">
-                    <table class="w-full text-right">
-                        <tr><td class="py-1 font-bold">Subtotal:</td><td class="py-1 w-32">RM {{ subtotal.toFixed(2) }}</td></tr>
-                        <tr><td class="py-1 font-bold">Discount (-):</td><td class="py-1">RM {{ form.discount.toFixed(2) }}</td></tr>
-                        <tr><td class="py-1 font-bold">SST (+):</td><td class="py-1 border-b">RM {{ sstAmount.toFixed(2) }}</td></tr>
-                        <tr class="print-total-box"><td class="py-2 px-2 font-bold text-lg">Grand Total:</td><td class="py-2 px-2 font-bold text-lg">RM {{ grandTotal.toFixed(2) }}</td></tr>
+                <div class="w-2/5 max-w-sm">
+                    <table class="w-full text-right text-sm">
+                        <tr><td class="py-1 font-semibold text-gray-700">Subtotal:</td><td class="py-1 w-32 font-bold">RM {{ subtotal.toFixed(2) }}</td></tr>
+                        <tr><td class="py-1 font-semibold text-gray-700">Discount (-):</td><td class="py-1 font-bold">RM {{ form.discount.toFixed(2) }}</td></tr>
+                        <tr><td class="py-1 font-semibold text-gray-700">SST (+):</td><td class="py-1 border-b border-gray-400 font-bold">RM {{ sstAmount.toFixed(2) }}</td></tr>
+                        <tr class="print-total-box"><td class="py-2.5 px-3 font-bold text-base">Grand Total:</td><td class="py-2.5 px-3 font-bold text-base">RM {{ grandTotal.toFixed(2) }}</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- Signatures -->
-            <div class="mt-20 flex justify-between">
-                <div class="text-center w-64">
-                    <div class="border-t border-gray-400 pt-2 font-bold">Prepared By</div>
-                    <div class="text-gray-600 text-sm">Admin / Sales Team</div>
+            <!-- Professional Signatures -->
+            <div class="mt-16 flex justify-between text-xs">
+                <div class="text-center w-56">
+                    <div class="border-t border-gray-400 pt-2 font-bold text-darkblue">Prepared By</div>
+                    <div class="text-gray-600">Admin / Sales Team</div>
                 </div>
-                <div class="text-center w-64">
-                    <div class="border-t border-gray-400 pt-2 font-bold">Authorized Signature</div>
-                    <div class="text-gray-600 text-sm">{{ company.name }}</div>
+                <div class="text-center w-56">
+                    <div class="border-t border-gray-400 pt-2 font-bold text-darkblue">Authorized Signature</div>
+                    <div class="text-gray-600 font-semibold">{{ company.name }}</div>
                 </div>
             </div>
 
@@ -370,6 +470,8 @@
             data() {
                 return {
                     currentTab: 'dashboard',
+                    isEditing: false,
+                    editingId: null,
                     company: {
                         name: "ZENQOR TECHNOLOGIES",
                         ssm: "202603157897 (JM1045730-D)",
@@ -384,7 +486,7 @@
                         sstRate: 8
                     },
                     customers: [
-                        { name: "MUHAMMAD NUR AL ALIYYU BIN MUHAMMAD NAZMI", contact: "MUHAMMAD NUR AL ALIYYU BIN MUHAMMAD NAZMI", address: "NO 4 JALAN SRI KENANGA, TAMAN SRI RAYA", city:"43200 CHERAS SELANGOR", phone: "+60 11-3708 0815", email: "N/A" }
+                        { name: "MUHAMMAD NUR AL ALIYYU BIN MUHAMMAD NAZMI", contact: "MUHAMMAD NUR AL ALIYYU BIN MUHAMMAD NAZMI", address: "NO 4 JALAN SRI KENANGA, TAMAN SRI RAYA, 43200 CHERAS SELANGOR", phone: "+60 11-3708 0815", email: "N/A", ssm: "" }
                     ],
                     products: [
                         { code: "DOC-001", name: "Create LOA", desc: "Create LOA Under (Zenqor)", price: 15.00, taxable: false },
@@ -405,7 +507,6 @@
                     },
                     // JSON strings for editing
                     companyJson: '',
-                    customersJson: '',
                     productsJson: ''
                 }
             },
@@ -426,7 +527,6 @@
                     return this.history.filter(h => h.type === 'Invoice').reduce((sum, h) => sum + h.grandTotal, 0);
                 },
                 validityDays() {
-                    // Kira perbezaan hari antara tarikh mula dan tarikh tamat
                     let d1 = new Date(this.form.date);
                     let d2 = new Date(this.form.dueDate);
                     let diff = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
@@ -435,10 +535,47 @@
             },
             watch: {
                 'form.type'(newVal) {
-                    this.generateDocNo();
+                    if (!this.isEditing) {
+                        this.generateDocNo();
+                    }
                 }
             },
             methods: {
+                createNewDoc() {
+                    this.isEditing = false;
+                    this.editingId = null;
+                    this.form = {
+                        type: 'Quotation',
+                        docNo: '',
+                        customer: this.customers[0] || null,
+                        date: new Date().toISOString().substr(0, 10),
+                        dueDate: new Date(Date.now() + 5*24*60*60*1000).toISOString().substr(0, 10),
+                        items: [
+                            { product: null, desc: '', qty: 1, price: 0, taxable: false }
+                        ],
+                        discount: 0
+                    };
+                    this.generateDocNo();
+                    this.currentTab = 'create';
+                },
+                editDoc(doc) {
+                    if (doc.savedForm) {
+                        this.form = JSON.parse(JSON.stringify(doc.savedForm));
+                    } else {
+                        this.form.docNo = doc.docNo;
+                        this.form.type = doc.type;
+                        this.form.date = doc.date;
+                    }
+                    this.isEditing = true;
+                    this.editingId = doc.id;
+                    this.currentTab = 'create';
+                },
+                cancelEdit() {
+                    this.isEditing = false;
+                    this.editingId = null;
+                    this.createNewDoc();
+                    this.currentTab = 'dashboard';
+                },
                 calculateItemAmount(item) {
                     let qty = item.qty || 1; 
                     return qty * (item.price || 0);
@@ -449,15 +586,24 @@
                 removeItem(index) {
                     this.form.items.splice(index, 1);
                 },
+                addCustomer() {
+                    this.customers.push({ name: "Pelanggan Baru", contact: "", address: "", phone: "", email: "", ssm: "" });
+                },
+                removeCustomer(idx) {
+                    if(confirm("Hapus pelanggan ini?")) {
+                        this.customers.splice(idx, 1);
+                        this.saveData();
+                    }
+                },
                 deleteDoc(id) {
                     if(confirm('Adakah anda pasti mahu menghapus dokumen ini dari rekod?')) {
                         this.history = this.history.filter(h => h.id !== id);
                         localStorage.setItem('zenqorHistory', JSON.stringify(this.history));
-                        this.generateDocNo();
+                        if (!this.isEditing) this.generateDocNo();
                     }
                 },
                 selectCustomer() {
-                    // Logic when customer is selected (handled via v-model)
+                    // Model handles binding
                 },
                 selectProduct(item) {
                     if (item.product) {
@@ -474,19 +620,31 @@
                     this.form.docNo = `${prefix}-${year}-${String(count).padStart(6, '0')}`;
                 },
                 printDocument() {
-                    // Save to history before printing
-                    this.history.push({
-                        id: Date.now(),
+                    let record = {
+                        id: this.isEditing ? this.editingId : Date.now(),
                         type: this.form.type,
                         docNo: this.form.docNo,
                         date: this.form.date,
                         customerName: this.form.customer ? this.form.customer.name : 'Unknown',
-                        grandTotal: this.grandTotal
-                    });
+                        grandTotal: this.grandTotal,
+                        savedForm: JSON.parse(JSON.stringify(this.form))
+                    };
+
+                    if (this.isEditing) {
+                        let idx = this.history.findIndex(h => h.id === this.editingId);
+                        if (idx !== -1) {
+                            this.history[idx] = record;
+                        }
+                    } else {
+                        this.history.push(record);
+                    }
                     
                     localStorage.setItem('zenqorHistory', JSON.stringify(this.history));
                     window.print();
-                    this.generateDocNo();
+                    
+                    if (!this.isEditing) {
+                        this.generateDocNo();
+                    }
                 },
                 loadData() {
                     const h = localStorage.getItem('zenqorHistory');
@@ -496,33 +654,37 @@
                     if (comp) this.company = JSON.parse(comp);
                     
                     const cust = localStorage.getItem('zenqorCustomers');
-                    if (cust) this.customers = JSON.parse(cust);
+                    if (cust) {
+                        this.customers = JSON.parse(cust);
+                    } else {
+                        this.customers = [
+                            { name: "MUHAMMAD NUR AL ALIYYU BIN MUHAMMAD NAZMI", contact: "MUHAMMAD NUR AL ALIYYU BIN MUHAMMAD NAZMI", address: "NO 4 JALAN SRI KENANGA, TAMAN SRI RAYA, 43200 CHERAS SELANGOR", phone: "+60 11-3708 0815", email: "N/A", ssm: "" }
+                        ];
+                    }
                     
                     const prod = localStorage.getItem('zenqorProducts');
                     if (prod) this.products = JSON.parse(prod);
 
                     this.companyJson = JSON.stringify(this.company, null, 2);
-                    this.customersJson = JSON.stringify(this.customers, null, 2);
                     this.productsJson = JSON.stringify(this.products, null, 2);
                 },
                 saveData() {
                     try {
                         this.company = JSON.parse(this.companyJson);
-                        this.customers = JSON.parse(this.customersJson);
                         this.products = JSON.parse(this.productsJson);
                         
                         localStorage.setItem('zenqorCompany', JSON.stringify(this.company));
                         localStorage.setItem('zenqorCustomers', JSON.stringify(this.customers));
                         localStorage.setItem('zenqorProducts', JSON.stringify(this.products));
-                        alert('Data Saved Successfully!');
+                        alert('Data & Tetapan Berjaya Disimpan!');
                     } catch (e) {
-                        alert('Invalid JSON format. Please check your data.');
+                        alert('Format JSON tidak sah.');
                     }
                 }
             },
             mounted() {
                 this.loadData();
-                this.generateDocNo();
+                this.createNewDoc();
             }
         }).mount('#app')
     </script>
